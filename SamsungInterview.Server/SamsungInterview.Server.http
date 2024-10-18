@@ -1,0 +1,6 @@
+@SamsungInterview.Server_HostAddress = http://localhost:5045
+
+GET {{SamsungInterview.Server_HostAddress}}/person/
+Accept: application/json
+
+###

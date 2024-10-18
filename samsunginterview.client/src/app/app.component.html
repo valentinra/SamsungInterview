@@ -1,0 +1,18 @@
+<h1 id="tableLabel">People list</h1>
+
+<p *ngIf="!persons">No persons. Maybe refresh? </p>
+
+<table *ngIf="persons">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let person of persons">
+            <td>{{ person.name }}</td>
+            <td>{{ person.address }}</td>
+        </tr>
+    </tbody>
+</table>
