@@ -21,7 +21,7 @@ namespace SamsungInterview.Server.Controllers
         ];
 
         [HttpGet]
-        public Person[] Get()
+        public IEnumerable<Person> Get()
         {
             return _peopleList;
         }
