@@ -6,17 +6,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
+import { MatDialogModule } from '@angular/material/dialog';
+import { AddressDialog } from './address-dialog/address-dialog.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AddressDialog,
   ],
   imports: [
     BrowserModule, HttpClientModule,
-    AppRoutingModule 
+    AppRoutingModule, MatDialogModule
   ],
   providers: [
     provideAnimationsAsync('noop')
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

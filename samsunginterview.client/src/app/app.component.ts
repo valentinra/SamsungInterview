@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { AddressDialog } from './address-dialog/address-dialog.component';
 
 interface Person {
   name: string;
@@ -14,7 +16,7 @@ interface Person {
 export class AppComponent implements OnInit {
   public persons: Person[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, public dialog: MatDialog) {}
 
   ngOnInit() {
     this.getpersons();
@@ -29,6 +31,14 @@ export class AppComponent implements OnInit {
         console.error(error);
       }
     );
+  }
+
+  showPerson(person: Person) {
+
+    this.dialog.open(AddressDialog, {
+      width: '250px',
+      data: { address: person.address }
+    });
   }
 
   title = 'samsunginterview.client';
